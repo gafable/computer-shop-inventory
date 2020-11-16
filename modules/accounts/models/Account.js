@@ -1,5 +1,5 @@
 const { DataTypes, DATE } = require('sequelize')
-const db = require('./../../../services/db_connection')
+const db = require('../../../services/db_connection')
 
 const account = db.sequelize.define("account", {
     id: {
