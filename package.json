@@ -1,25 +1,30 @@
 {
-  "name": "computer-shop-inventory",
-  "version": "1.0.0",
-  "description": "A simple computer shop inventory",
-  "main": "app.js",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "ejs": "^3.1.5",
-    "express": "^4.17.1"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gafable/computer-shop-inventory.git"
-  },
-  "author": "Lorem Zyn",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/gafable/computer-shop-inventory/issues"
-  },
-  "homepage": "https://github.com/gafable/computer-shop-inventory#readme"
+    "name": "computer-shop-inventory",
+    "version": "1.0.0",
+    "description": "A simple computer shop inventory",
+    "main": "app.js",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "ejs": "^3.1.5",
+        "express": "^4.17.1",
+        "express-ejs-layouts": "^2.5.0",
+        "method-override": "^3.0.0",
+        "mysql2": "^2.2.5",
+        "sequelize": "^6.3.5",
+        "sequelize-cli": "^6.2.0"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gafable/computer-shop-inventory.git"
+    },
+    "author": "Lorem Zyn",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/gafable/computer-shop-inventory/issues"
+    },
+    "homepage": "https://github.com/gafable/computer-shop-inventory#readme"
 }
