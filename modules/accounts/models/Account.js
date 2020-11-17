@@ -1,4 +1,4 @@
-const { DataTypes, DATE } = require('sequelize')
+const { DataTypes } = require('sequelize')
 const db = require('../../../services/db_connection')
 
 const account = db.sequelize.define("account", {

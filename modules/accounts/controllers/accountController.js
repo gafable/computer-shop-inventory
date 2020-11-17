@@ -1,11 +1,35 @@
-const { response } = require('express')
-const account = require('../models/Account')
+const model = require('../models/Account')
+const { Op } = require('sequelize')
 
-exports.createAccount = async(request, response) => {
-    const data = await account.account.create({
-        username: request.query.username,
-        password: request.query.password
-    })
+module.exports = {
+    async findAccount(request, response) {
+        try {
+            const account = await model.account.findOne({
+                where: {
+                    [Op.and]: [
+                        { username: request.body.username },
+                        { password: request.body.password }
+                    ]
+                }
+            })
+            if (!account) return response.send('Account nor found')
 
-    response.send('account created.')
+            response.redirect('/pages/dashboard')
+        } catch (error) {
+
+        }
+    },
+    async createAccount(request, response) {
+        try {
+            console.log(request.body)
+            const data = await model.account.create({
+                username: request.body.username,
+                password: request.body.password
+            })
+            response.send('account created.')
+        } catch (error) {
+            response.send(error)
+        }
+    }
+
 }

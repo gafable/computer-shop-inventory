@@ -1,0 +1,62 @@
+<div class="container" style="width: 1200px;">
+    <h1 class="text-center mb-5">Dashboard</h1>
+
+    <div class="card">
+        <div class="card-header d-flex justify-content-between">
+            <h4 class="card-title">Computer List</h4>
+            <a href="/pages/products/create" class="btn btn-sm btn-primary px-3">Add new computer <i class="fa fa-plus"></i></a>
+
+        </div>
+        <div class="card-body p-0">
+            <table class="table w-100">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Brand</th>
+                        <th>Price</th>
+                        <th>Stocks</th>
+                        <th>Description</th>
+                        <th style="width: 150px;" class="text-center">Actions</th>
+                    </tr>
+                    <tbody>
+                        <% if (!products.length) { %>
+                            <tr class="text-center">
+                                <td colspan="6"> no products available</td>
+                            </tr>
+                            <% } else { %>
+
+                                <% products.forEach(product => { %>
+                                    <tr>
+                                        <td>
+                                            <%= product.name %>
+                                        </td>
+                                        <td>
+                                            <%= product.brand %>
+                                        </td>
+                                        <td>
+                                            <%= product.price %>
+                                        </td>
+                                        <td>
+                                            <%= product.stocks %>
+                                        </td>
+                                        <td>
+                                            <%= product.description %>
+                                        </td>
+                                        <td class="d-flex justify-content-between">
+                                            <a class="btn btn-sm btn-success" href="/pages/products/update/<%= product.id %>"><i class="fa fa-pencil"></i> update</a>
+                                            <form action="/products/delete/<%= product.id %>" method="post">
+                                                <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> delete</button>
+                                            </form>
+
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+
+                                        <% } %>
+                    </tbody>
+                </thead>
+
+            </table>
+        </div>
+    </div>
+</div>
